@@ -1,6 +1,8 @@
 WebDown
 =======
 
+WebDown is a web PHP script to download torrents with a beautiful an intuitive web responsive interface.
+
 ## Quick start
 
 Three quick start options are available:
