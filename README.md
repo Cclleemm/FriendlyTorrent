@@ -1,7 +1,8 @@
-WebDown
+FriendlyTorrent
 =======
 
-WebDown is a web PHP script to download torrents with a beautiful an intuitive web responsive interface.
+FriendlyTorrent is a web PHP script to download torrents with a beautiful an intuitive web responsive interface.
+Moreover it allow you to explore and share download files "in the cloud" with your friends.
 
 ## Quick start
 
