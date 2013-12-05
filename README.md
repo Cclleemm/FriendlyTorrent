@@ -9,8 +9,10 @@ Moreover it allow you to explore and share download files "in the cloud" with yo
 ### Automatic installation (Ubuntu, Debian ...)
 * Download the git repository.
 * run the install wizard with this following commands
-` sudo chmod +x ./install.sh `
-` sudo ./install.sh `
+``` 
+sudo chmod +x ./install.sh
+sudo ./install.sh 
+```
 
 Three quick start options are available:
 
