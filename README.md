@@ -6,6 +6,12 @@ Moreover it allow you to explore and share download files "in the cloud" with yo
 
 ## Quick start
 
+### Automatic installation (Ubuntu, Debian ...)
+* Download the git repository.
+* run the install wizard with this following commands
+` sudo chmod +x ./install.sh `
+` sudo ./install.sh `
+
 Three quick start options are available:
 
 * [Download the latest release](https://github.com/twbs/bootstrap/archive/v3.0.3.zip).
