@@ -1,0 +1,17 @@
+RewriteEngine on
+Options +FollowSymlinks
+
+RewriteRule  ^/$   index.php?p=accueil [L,QSA]
+RewriteRule  ^$   index.php?p=accueil [L,QSA]
+
+RewriteRule  ^connect/([a-zA-Z0-9\-\_\/]*)$   index.php?p=connect/$1 [L,QSA]
+RewriteRule  ^boxe/([a-zA-Z0-9\-\_\/]*)$   index.php?p=boxe/$1 [L,QSA]
+RewriteRule  ^action/([a-zA-Z0-9\-\_\/]*)$   index.php?p=action/$1 [L,QSA]
+RewriteRule  ^downloads/(.*)$   index.php?p=downloads/index/$1 [L,QSA]
+RewriteRule  ^torrents/([a-zA-Z0-9\-\_\/]*)$   index.php?p=torrents/$1 [L,QSA]
+RewriteRule  ^compte/([a-zA-Z0-9\-\_\/]*)$   index.php?p=compte/$1 [L,QSA]
+RewriteRule  ^gks/([a-zA-Z0-9\-\_\/]*)$   index.php?p=gks/$1 [L,QSA]
+RewriteRule  ^messagerie/([a-zA-Z0-9\-\_\/]*)$   index.php?p=messagerie/$1 [L,QSA]
+RewriteRule  ^rss/([a-zA-Z0-9\-\_\/]*)$   index.php?p=rss/$1 [L,QSA]
+RewriteRule  ^admin/([a-zA-Z0-9\-\_\/]*)$   index.php?p=admin/$1 [L,QSA]
+RewriteRule  ^stats/([a-zA-Z0-9\-\_\/]*)$   index.php?p=stats/$1 [L,QSA]

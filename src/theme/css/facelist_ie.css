@@ -1,0 +1,14 @@
+.token{background-image:url('../images/facelist/token.gif');background-repeat:no-repeat;color:black;white-space:nowrap;position: relative;}
+.token span{background-image:url('../images/facelist/token.gif');background-position:top right;background-repeat:no-repeat;display:block;}
+.token span span{background-position:bottom right;}
+.token span span span{background-position:bottom left;}
+.token span span span span{background-image:none;padding:2px 20px 2px 5px; font-size: 12px;}
+
+.tokenhover,
+html div.tokenizer_locked .tokenhover span{background-image:url('../images/facelist/token.gif');}
+.token:hover,
+.token:hover span{background-image:url('../images/facelist/token_hover.gif');text-decoration:none;}
+.token_selected,
+.token_selected span,
+.token_selected:hover,
+.token_selected:hover span{background-image:url('../images/facelist/token_selected.gif');color:white;text-decoration:none;}

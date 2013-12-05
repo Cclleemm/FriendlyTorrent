@@ -1,0 +1,100 @@
+
+
+/* TextboxList sample CSS */
+ul.facelist {
+	list-style: none; 
+	margin: 0; 
+	overflow: hidden; 
+	height: auto !important; 
+	height: 1%; 
+	padding: 4px 5px 0; 
+	width: 100%;
+}
+ul.facelist li { 
+	float: left; 
+	margin: 0 5px 4px 0; 
+}
+ul.facelist li.token-input input { 
+	width: 150px; 
+	margin: 0; 
+	border: 1px solid #FFF; 
+	outline: 0; 
+	padding: 3px 0 2px; 
+} /* no left/right padding here please */
+
+ul.facelist li.token-input { 
+	margin: 0; 
+	width: 5px;
+}
+.token{
+color:black;
+position: relative;
+background-color: #eff2f7;
+border: solid 1px #ccd5e4;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+-webkit-transition: background-color .2s ease-in;
+cursor: pointer;
+padding:2px 20px 2px 5px;
+}
+.tokenhover,
+.token:hover{
+position: relative;
+background-color: #d8dfea;
+border: solid 1px #ccd5e4;
+}
+.token_selected:hover,
+.token_selected{
+color:#fff;
+background-color: #5670a6;
+border: solid 1px #3b5998;
+}
+
+.token span.x,
+.token span.x_hover,
+.tokenhover span.x,
+.tokenhover span.x_hover{background-image:url('../images/token_x.gif');cursor:pointer;display:inline; width: 10px; height:9px; display: block; position:absolute; right: 0px; top: 3.5px;text-indent: -9999px;margin-right:5px;margin-top:3px;}
+
+
+
+/* Autocompleter */
+
+#result_list { 
+	position: absolute; 
+	width: 177px; 
+}
+#result_list .default { 
+	padding: 5px 7px; 
+	background: #eee;
+	color:black;
+}
+#result_list ul {  
+	margin: 0; 
+	padding: 0; 
+	background: #fff;
+	width: 177px; 
+}
+#result_list ul li { 
+	padding: 5px 12px; 
+	margin: 0; 
+	list-style-type: none; 
+	border: 0px solid #ccc; 
+	border-width: 0 1px 1px; 
+	font: 11px "Lucida Grande", "Verdana"; 
+	color:black;
+	width: 152px; 
+	background: #fff;
+}
+#result_list ul li em { 
+	font-weight: bold; 
+	font-style: normal; 
+	background: #dae1eb;  
+	color: blue;
+}
+#result_list ul li.auto-focus { 
+	background: #029ec6; 
+}
+#result_list ul li.auto-focus em { 
+	background: none; 
+}
