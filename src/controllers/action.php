@@ -20,7 +20,7 @@ class Action extends Controller{
 	
     function delete($idFile){
     	if(!Core::idCo()){
-    		echo '<script>$.pnotify({title: \'Erreur\',text: \'Vous avez été déconnecté !\',type: \'error\'});</script>';
+    		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_ERROR_DISCONNECTED.'\',type: \'error\'});</script>';
     		exit();
     	}
     	
@@ -31,7 +31,7 @@ class Action extends Controller{
 	    $rst = mysql_fetch_assoc($query);
     	
     	if($rst['idBoxe'] != Core::idCo()){
-    		echo '<script>$.pnotify({title: \'Erreur\',text: \'Attention petit malin, supprimer des fichier de votre boxe !\',type: \'error\'});</script>';
+    		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_ERROR_DELETEFORBIDDEN.'\',type: \'error\'});</script>';
     		exit();
     	}
 	    
@@ -61,7 +61,7 @@ class Action extends Controller{
 	      echo '<script>$("#'.$idFile.'").hide();</script>';
 	      
 	    }else{
-	      echo '<script>$.pnotify({title: \'Suppression impossible\',text: \'Une erreur est survenue lors de la suppression !\',type: \'error\'});</script>';
+	      echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_ERROR_CANTDELETE.'\',type: \'error\'});</script>';
 	    }
     }
     
@@ -89,7 +89,7 @@ class Action extends Controller{
 
     function listeTorrent(){
     	if(!Core::idCo())
-    		echo '<script>$.pnotify({title: \'Erreur\',text: \'Vous avez été déconnecté !\',type: \'error\'});</script>';
+    		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_ERROR_DISCONNECTED.' !\',type: \'error\'});</script>';
     		
     	$torrents = new TorrentsM();
     	$final = $torrents->myTorrents();
@@ -114,7 +114,7 @@ class Action extends Controller{
 
      function listeTorrentAdmin(){
      	if(!Core::idCo())
-    		echo '<script>$.pnotify({title: \'Erreur\',text: \'Vous avez été déconnecté !\',type: \'error\'});</script>';
+    		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_ERROR_DISCONNECTED.'\',type: \'error\'});</script>';
 
     	$torrents = new TorrentsM();
     	$final = $torrents->torrents();
@@ -123,7 +123,7 @@ class Action extends Controller{
     
     function listeRss(){
     	if(!Core::idCo())
-    		echo '<script>$.pnotify({title: \'Erreur\',text: \'Vous avez été déconnecté !\',type: \'error\'});</script>';
+    		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_ERROR_DISCONNECTED.'\',type: \'error\'});</script>';
     		
     	if($this->user->userData['rss']){
     		$rss = new Rss($this->user->userData['rss']);
@@ -134,7 +134,7 @@ class Action extends Controller{
 
     function start($id){
     	if(!Core::idCo())
-    		echo '<script>$.pnotify({title: \'Erreur\',text: \'Vous avez été déconnecté !\',type: \'error\'});</script>';
+    		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_ERROR_DISCONNECTED.'\',type: \'error\'});</script>';
     		
     	$torrent = new Torrent($id);
     	if(!$torrent->start())
@@ -143,7 +143,7 @@ class Action extends Controller{
 
     function stop($id){
     	if(!Core::idCo())
-    		echo '<script>$.pnotify({title: \'Erreur\',text: \'Vous avez été déconnecté !\',type: \'error\'});</script>';
+    		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_ERROR_DISCONNECTED.'\',type: \'error\'});</script>';
     		
     	$torrent = new Torrent($id);
     	if(!$torrent->stop())
@@ -152,7 +152,7 @@ class Action extends Controller{
     
     function startRss($id){
     	if(!Core::idCo())
-    		echo '<script>$.pnotify({title: \'Erreur\',text: \'Vous avez été déconnecté !\',type: \'error\'});</script>';
+    		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_ERROR_DISCONNECTED.'\',type: \'error\'});</script>';
     		
     	$freespace = disk_free_space(ROOT_DOWNLOADS);
     	if(round(($freespace / 1024)/1024/1024, 2) < 50)

@@ -68,8 +68,8 @@
 		
 		<aside id="menu">
 		
-			<header>
-				boxe
+			<header style="padding-top:4px;">
+				<img src="<?php echo DOMAIN; ?>theme/images/friendly-torrent-logo.png" width="40" style="margin-left:3px;" >
 			</header>
 			
 			
@@ -106,7 +106,7 @@
 					</li>
 					</a>
 
-					<li onclick="$('#boxesMenu').toggle();" >
+					<li onclick="$('#boxesMenu').toggle();" id="otherBoxes" >
 						<span class="glyphicon glyphicon-user"></span>
 						Boxes
 					</li>
@@ -170,7 +170,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-          <button type="button" class="btn btn-primary" id="OK" >Éffectuer</button>
+          <button type="button" class="btn btn-primary" id="OK" >Effectuer</button>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -220,7 +220,9 @@
 		
 		if($nb < 20)
 			$nb = 20;
-		
+			
+		if (!$r)
+			echo "<script>$('#otherBoxes').hide();</script>";
 		?>
 
 	<div id="boxesMenu" style="position:fixed;z-index:10;display:none;top:<?php echo $nb; ?>px;left:90px;" >

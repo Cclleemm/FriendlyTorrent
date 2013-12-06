@@ -12,7 +12,7 @@ class Boxe extends Controller{
 	////////////////////////////////////
 
         var $models = array('cloud', 'download', 'xfer');
-        var $title = array('index' => 'Ma box');
+        var $title = array('index' => LANG_TITLE);
 
 	////////////////////////////////////
 	//          ACTION INDEX          //
@@ -65,7 +65,7 @@ class Boxe extends Controller{
 		$d['uploadTotal'] = $stats['up'];
 		$d['downloadTotal'] = $stats['down'];
 		
-		$this->title['users'] = "Box de ".$login;
+		$this->title['users'] = $login."'s box";
 		$this->setTitle();
 		
 		$totalspace = disk_total_space(ROOT_DOWNLOADS);

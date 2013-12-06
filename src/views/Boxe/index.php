@@ -28,7 +28,7 @@ $_GET['dir'] = str_replace('../', '', $_GET['dir']);
     $boxeLink = "users/".$boxe['login'].'/';
 ?>
 
-<div class="row" style="margin-top:-15px;background-color: #f9fafc;height:100%;" >
+<div class="row" style="margin-top:-15px;height:100%;" >
 	<div id="profilCard" class="col-md-2" style="text-align:center;padding:10px;padding-top:50px;height:100%;" >
 	    <img class="img-circle" src="<?php echo Tools::get_gravatar($boxe['mail']); ?>">
 	    <h4><?php echo ucfirst($boxe['login']);?></h4>
@@ -42,7 +42,7 @@ $_GET['dir'] = str_replace('../', '', $_GET['dir']);
 	    	}
 	    ?>
 	</div>
-	<div class="col-md-10" style="background-color: rgb(243,245,249);border-left: 1px solid #dddddd;padding-top:20px;" >
+	<div class="col-md-10" style="border-left: 1px solid #dddddd;padding-top:20px;" >
 		
 <div class="sortable table-responsive">
 		<table id="boxe" class="table table-vertical-center table-primary table-thead-simple table-responsive block">

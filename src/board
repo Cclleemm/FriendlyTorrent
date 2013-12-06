@@ -1,7 +1,0 @@
-# sample cron script to put in /etc/cron.d/
-
-*/1 * * * *     www-data wget "http://88.190.38.35/action/refreshTorrent/" -O /dev/null
-10 0 * * * 	www-data wget "http://88.190.38.35/action/deleteOneDayForAllUser/?verif=superMDP" -O /dev/null
-
-*/1 * * * *     www-data wget "http://localhost/action/refreshTorrent/" -O /dev/null
-10 0 * * * 	www-data wget "http://localhost/action/deleteOneDayForAllUser/?verif=Ensisa09" -O /dev/null
