@@ -24,6 +24,7 @@ checkInstall php5-memcache
 checkInstall php5-memcached
 checkInstall transmission
 checkInstall transmission-daemon
+checkInstall zip
 
 
 echo "----------------------------------------------------"
