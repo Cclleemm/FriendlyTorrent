@@ -26,19 +26,21 @@ Within the download you'll find the following directories and files. You'll see 
 
 ```
 bootstrap/
-├── css/
-│   ├── bootstrap.css
-│   ├── bootstrap.min.css
-│   ├── bootstrap-theme.css
-│   └── bootstrap-theme.min.css
-├── js/
-│   ├── bootstrap.js
-│   └── bootstrap.min.js
-└── fonts/
-    ├── glyphicons-halflings-regular.eot
-    ├── glyphicons-halflings-regular.svg
-    ├── glyphicons-halflings-regular.ttf
-    └── glyphicons-halflings-regular.woff
+├── board.sql
+├── install.sh
+├── src/
+│   ├── bootstrap/
+│   ├── controllers/
+│   ├── core/
+│   ├── models/
+│   ├── theme/
+│   ├── tmp/
+│   ├── tornado/
+│   ├── uploadify/
+│   ├── views/
+│   ├── .htaccess
+│   ├── favicon.ico
+│   ├── index.php
 ```
 
 ## Community
