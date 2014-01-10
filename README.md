@@ -29,18 +29,18 @@ bootstrap/
 ├── board.sql
 ├── install.sh
 └── src/
-│   ├── bootstrap/
-│   ├── controllers/
-│   ├── core/
-│   ├── models/
-│   ├── theme/
-│   ├── tmp/
-│   ├── tornado/
-│   ├── uploadify/
-│   ├── views/
-│   ├── .htaccess
-│   ├── favicon.ico
-└──---- index.php
+    ├── bootstrap/
+    ├── controllers/
+    ├── core/
+    ├── models/
+    ├── theme/
+    ├── tmp/
+    ├── tornado/
+    ├── uploadify/
+    ├── views/
+    ├── .htaccess
+    ├── favicon.ico
+    └── index.php
 ```
 
 ## Community
