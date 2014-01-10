@@ -1,8 +1,11 @@
-FriendlyTorrent
+![PreviewImage](http://friendlytorrent.com/img/logo-mini.png)  FriendlyTorrent
 =======
 
 FriendlyTorrent is a web PHP script to download torrents with a beautiful an intuitive web responsive interface.
 Moreover it allow you to explore and share download files "in the cloud" with your friends.
+
+![PreviewImage](http://friendlytorrent.com/img/home.png) 
+
 
 ## Quick start
 
