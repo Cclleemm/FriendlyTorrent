@@ -6,10 +6,31 @@ Moreover it allow you to explore and share download files "in the cloud" with yo
 
 ![PreviewImage](http://friendlytorrent.com/img/home.png) 
 
+### What's included
 
-## Quick start
+Within the download you'll find the following directories and files. You'll see something like this:
 
-### Automatic installation (Ubuntu, Debian ...)
+```
+bootstrap/
+├── board.sql
+├── install.sh
+└── src/
+    ├── bootstrap/
+    ├── controllers/
+    ├── core/
+    ├── models/
+    ├── theme/
+    ├── tmp/
+    ├── tornado/
+    ├── uploadify/
+    ├── views/
+    ├── .htaccess
+    ├── favicon.ico
+    └── index.php
+```
+
+
+## Automatic installation (Ubuntu, Debian ...)
 * [Download the latest release](https://github.com/Cclleemm/FriendlyTorrent/archive/master.zip).
 * run the install wizard with this following commands
 
@@ -18,9 +39,9 @@ sudo chmod +x ./install.sh
 sudo ./install.sh 
 ``` 
 
-### Manual installation
+## Manual installation
 
-#### Dependencies
+### Dependencies
 You must have installed this before :
 * Apache2
 * php5
@@ -35,7 +56,7 @@ You must have installed this before :
 * transmission-daemon
 *  zip
 
-#### Files Import
+### Files Import
 Put all files of the `src/` folder in your web folder (for example in /var/www/).
 
 Create the download folder where all your downloads will be stored (ex : /var/downloads/)
@@ -54,7 +75,7 @@ define('TRANSMISSION','/usr/bin/transmission-daemon');
 ?>
 ```
 
-#### MySQL Import
+### MySQL Import
 Import the MySQL database `board.sql`
 
 Configure the `src/core/config/bdd.php` file with yours settings :
@@ -97,32 +118,9 @@ Stop transmission `sudo service transmission stop`
 
 ***
 
-Read the [Getting Started page](http:/friendlytorrent.com) for more information.
+Read the [Official Website](http:/friendlytorrent.com) for more information.
 
 ***
-
-### What's included
-
-Within the download you'll find the following directories and files. You'll see something like this:
-
-```
-bootstrap/
-├── board.sql
-├── install.sh
-└── src/
-    ├── bootstrap/
-    ├── controllers/
-    ├── core/
-    ├── models/
-    ├── theme/
-    ├── tmp/
-    ├── tornado/
-    ├── uploadify/
-    ├── views/
-    ├── .htaccess
-    ├── favicon.ico
-    └── index.php
-```
 
 ## Community
 
