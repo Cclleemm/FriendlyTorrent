@@ -28,7 +28,7 @@ Within the download you'll find the following directories and files. You'll see 
 bootstrap/
 ├── board.sql
 ├── install.sh
-├── src/
+└── src/
 │   ├── bootstrap/
 │   ├── controllers/
 │   ├── core/
@@ -40,7 +40,7 @@ bootstrap/
 │   ├── views/
 │   ├── .htaccess
 │   ├── favicon.ico
-│   ├── index.php
+└──---- index.php
 ```
 
 ## Community
