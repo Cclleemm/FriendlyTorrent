@@ -104,7 +104,7 @@ Enable HTACESS for the web folder.
 Add thoose lines in the cron table `/etc/cron.d/php5`
 ```
 */1 * * * *     www-data wget "http://localhost/action/refreshTorrent/" -O /dev/null' >> /etc/cron.d/php5
-10 0 * * * 	    www-data wget "http://localhost/action/deleteOneDayForAllUser/?verif=Ensisa09" -O /dev/null
+10 0 * * * 	    www-data wget "http://localhost/action/deleteOneDayForAllUser/?verif=PASSWORD" -O /dev/null
 ```
 
 
