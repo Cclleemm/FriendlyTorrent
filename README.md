@@ -16,9 +16,90 @@ Moreover it allow you to explore and share download files "in the cloud" with yo
 ``` 
 sudo chmod +x ./install.sh
 sudo ./install.sh 
+``` 
+
+### Manual installation
+
+#### Dependencies
+You must have installed this before :
+* Apache2
+* php5
+* mysql-server
+* libapache2-mod-php5
+* php5-curl
+* php5-mysql
+* memcached
+* php5-memcache
+* php5-memcached
+* transmission
+* transmission-daemon
+*  zip
+
+#### Files Import
+Put all files of the `src/` folder in your web folder (for example in /var/www/).
+
+Create the download folder where all your downloads will be stored (ex : /var/downloads/)
+
+Create `.transfert` folder (ex : /var/downloads/.transferts/)
+
+Create user folder  (ex : /var/downloads/user-name/)
+
+Give folders rights with `sudo chown www-data /var/downloads/ -R`
+
+Cofigure the `src/core/config/global.php` file with yours settings :
+```
+<?php
+define('ROOT_DOWNLOADS','/var/downloads/');
+define('TRANSMISSION','/usr/bin/transmission-daemon');
+?>
 ```
 
+#### MySQL Import
+Import the MySQL database `board.sql`
+
+Configure the `src/core/config/bdd.php` file with yours settings :
+```
+<?php
+//CONFIG MYSQL
+$BDD_MYSQL_SERVER = 'localhost';
+$BDD_MYSQL_LOGIN = 'root';
+$BDD_MYSQL_PASS = 'password';
+$BDD_MYSQL_BDD = 'FriendlyTorrentDB';
+?>
+```
+
+Add user in the `users` table with MD5 encryption for the password :
+```
+insert into users(login,mail,password,boxe,couleur,lastScan,rss,admin,port) values('USERNAME','-','MD5_PASSWORD','/YOUR_DOWNLOADS_FLODER/USERNAME', '78ba00', 0, '', 1, 9091);
+```
+
+### Apache Configuration
+
+Enable memcache in your `php.ini` file (/etc/php5/apache2/php.ini) adding line `extension=memcache.so`
+
+Enable HTACESS for the web folder.
+
+Add thoose lines in the cron table `/etc/cron.d/php5`
+```
+*/1 * * * *     www-data wget "http://localhost/action/refreshTorrent/" -O /dev/null' >> /etc/cron.d/php5
+10 0 * * * 	    www-data wget "http://localhost/action/deleteOneDayForAllUser/?verif=Ensisa09" -O /dev/null
+```
+
+
+### Initialization
+Restart cron `sudo /etc/init.d/cron restart`
+
+Restart Apache `sudo service apache2 reload`
+
+Stop transmission `sudo service transmission stop`
+
+
+
+***
+
 Read the [Getting Started page](http:/friendlytorrent.com) for more information.
+
+***
 
 ### What's included
 
