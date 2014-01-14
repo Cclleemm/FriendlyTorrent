@@ -12,7 +12,7 @@ class Stats extends Controller{
 	// CHARGEMENT DES MODELS UTILISES //
 	////////////////////////////////////
 
-        var $models = array('xfer', 'payment');
+        var $models = array('xfer');
         var $title = array('index' => 'Statistiques du serveur');
 
 	////////////////////////////////////
