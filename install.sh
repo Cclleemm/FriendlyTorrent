@@ -122,7 +122,7 @@ define('TRANSMISSION','/usr/bin/transmission-daemon');
 ?>" > "$websiteFolder""core/config/global.php"
 
 sudo service apache2 reload
-sudo service transmission stop
+sudo service transmission-daemon stop
 sudo /etc/init.d/cron restart
 
 echo "----------------------------------------------------"

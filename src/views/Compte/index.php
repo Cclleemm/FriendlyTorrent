@@ -27,25 +27,6 @@
 					Il vous reste actuellement <?php echo $user['nbrJours']; ?> jour(s) sur votre compte.
 				</div>
 		</div>
-		<div class="form-group">
-			<label class="col-lg-2 control-label" >Paiement</label>
-			<div class="col-lg-10">
-				
-				<input type="hidden" name="cmd" value="_xclick">
-				<input type="hidden" name="business" value="fbn.impakt@gmail.com">
-				<input type="hidden" name="lc" value="US">
-				<input type="hidden" name="item_name" value="30 jours">
-				<input type="hidden" name="amount" value="4.00">
-				<input type="hidden" name="currency_code" value="EUR">
-				<input type="hidden" name="button_subtype" value="services">
-				<input type="hidden" name="no_note" value="0">
-				<input type="hidden" name="return" value="http://88.190.38.35/compte/?paypal=1">
-				<input type="hidden" name="bn" value="PP-BuyNowBF:btn_paynowCC_LG.gif:NonHostedGuest">
-				<input type="image" src="https://www.paypalobjects.com/fr_XC/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
-				<img alt="" border="0" src="https://www.paypalobjects.com/fr_XC/i/scr/pixel.gif" width="1" height="1">
-			</div>
-		</div><br />
-</form>
 
 <form class="form-horizontal" method="POST" action="" role="form" >
 	
