@@ -70,7 +70,6 @@
 	              				<td>'.$admin.'</td>
 	              				<td class="center" style="width: 100px;">
 									<a href="'.DOMAIN.'admin/editUser/'.$value['id'].'/" data-toggle="tooltip" data-placement="top" data-original-title="Modifier un utilisateur" class="btn-action glyphicon glyphicon-pencil btn btn-success"><i></i></a>
-									<a href="'.DOMAIN.'admin/addDays/'.$value['id'].'/" data-toggle="tooltip" data-placement="top" data-original-title="Ajouter 30 jours" class="btn-action glyphicon glyphicon-plus-sign btn btn-success"><i></i></a>
 									'.$adminBtn;
 										if (!$rpc)
 											echo ' <a data-toggle="tooltip" data-placement="left" data-original-title="Lancer le processus transmission" href="'.DOMAIN.'admin/startTrans/'.$value['id'].'/" class="btn btn-action glyphicon glyphicon-play btn-success"><i></i></a>';

@@ -112,17 +112,6 @@ class User extends Common{
 		$this->bdd->query("UPDATE users SET couleur = '".$new."' WHERE id = '".$this->userId."';")or die(mysql_error());
 	}
 	
-	function addDays($nb, $price){
-		$this->bdd->query("INSERT INTO paiements VALUES('', '".$this->userId."', '".$nb."', '".$price."', '".time()."');")or die(mysql_error());
-		$this->bdd->query("UPDATE users SET nbrJours = nbrJours + '".$nb."' WHERE id = '".$this->userId."';")or die(mysql_error());
-	}
-	
-	function listPaiement(){
-		$sql = "SELECT * FROM paiements WHERE idUser = '".$this->userId."' ORDER BY time DESC;";
-		$rst = $this->bdd->query($sql);
-		return $this->bdd->data($rst);
-	}
-	
 	function changeMail($new){
 		$this->bdd->query("UPDATE users SET mail = '".$new."' WHERE id = '".$this->userId."';")or die(mysql_error());
 	}
