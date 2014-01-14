@@ -3,11 +3,6 @@
 </header>
 
 <?php
-	
-	if($active){
-?>
-
-<?php
 
 $user = new User();
 
@@ -267,12 +262,4 @@ $_GET['dir'] = str_replace('../', '', $_GET['dir']);
 
 <?php
   $user->setTimeLastCloud($boxe['id']);
-?>
-
-<?php
-	}else{
-?>
-<div class="alert alert-danger">Aucun abonnement actif !</div>
-<?php
-	}
 ?>

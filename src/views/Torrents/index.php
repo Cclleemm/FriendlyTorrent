@@ -1,9 +1,3 @@
-<?php
-	
-	if($active){
-?>
-
-
 <div id="panelRight" class="hidden-xs" style="display:block;overflow:scroll ">
 	
 </div>
@@ -42,11 +36,4 @@
 	 	?>
 	 	
 </script>
-<?php
-	}else{
-?>
-<div class="alert alert-danger">Aucun abonnement actif !</div>
-<?php
-	}
-?>
 </div>

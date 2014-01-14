@@ -132,13 +132,6 @@
 			</section>
 			
 			<section class="bottom" >
-				<ul>
-					<a href="<?php echo DOMAIN; ?>compte/" onclick="seeNotifNbrJours();" >
-						<li id="abo" style="border-left:none;width:80px;border-bottom: 1px solid #3b3b3c;" data-toggle="tooltip" data-placement="right" data-original-title="Il vous reste <?php echo $user['nbrJours']; ?> jour(s) d'abonnement" >
-							<span class="glyphicon glyphicon-time"></span><div aff="0" style="font-size:11px;position:relative;float:left;margin-left:32px;margin-top:-27px;" class="label label-<?php if($user['nbrJours'] >= 10){ echo 'primary'; }else{ echo 'danger'; } ?>"><?php echo $user['nbrJours']; ?></div>
-						</li>
-					</a>
-				</ul>
 				<ul >
 					<a href="<?php echo DOMAIN; ?>compte/">
 						<li style="border-left:none;">
@@ -232,11 +225,7 @@
 			</ul>
 		</div>
 	</div>
-	
-	<div class="popover fade right in" id="seeNotifNbrJours" style="position:fixed;height:75px;top:auto;bottom: 18px; left: 85px; display: <?php if($user->userData['bulleAbo'] == 1){echo 'none';}else{echo 'block';} ?>;"><a class="close" data-dismiss="alert" href="#" onclick="seeBulleAbo();" aria-hidden="true" style="margin-right:3px;" >&times;</a><div class="arrow"></div><div class="popover-content"><b>Il vous reste peu de jours !</b><br />Vous pouvez en acheter de nouveau pour continuer à utiliser le service.</div></div>
-	
-	<div class="popover fade right in" id="seeSpace" style="position:fixed;height:75px;top:auto;top: 405px; left: 85px; display:<?php if($user->userData['bulleSpace'] == 1){echo 'none';}else{echo 'block';} ?>;"><a class="close" data-dismiss="alert" href="#" onclick="seeBulleSpace();" aria-hidden="true" style="margin-right:3px;" >&times;</a><div class="arrow"></div><div class="popover-content"><b>Il ne reste plus assez d'espace sur le serveur</b> (<?php echo Tools::convertFileSize($freespace);?>) ! <br />C'est le moment de faire du nettoyage. </div></div>
-	
+
 	<script>
 
 			nbNotif();

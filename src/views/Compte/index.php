@@ -9,24 +9,8 @@
 					<strong>Attention !</strong> '.$error.'
 				</div>';
 		}
-		
-		if($_GET['paypal']){
-			echo '<div class="alert alert-success">
-					<button type="button" class="close" data-dismiss="alert">×</button>
-					Votre paiement a été envoyé, les jours payés seront ajoutés sous 24h.
-				</div>';
-		}
 	?>
 <br />
-<form class="form-horizontal" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<h3 id="abo" >Abonnement</h3><br />
-		
-		<div class="form-group">
-			<label class="col-lg-2 control-label" style="padding-top:0px;" >Abonnement en cours</label>
-				<div class="col-lg-10">
-					Il vous reste actuellement <?php echo $user['nbrJours']; ?> jour(s) sur votre compte.
-				</div>
-		</div>
 
 <form class="form-horizontal" method="POST" action="" role="form" >
 	

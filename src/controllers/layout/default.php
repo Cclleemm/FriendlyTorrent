@@ -9,7 +9,7 @@
 class Layoutdefault extends Common{
 	
 	var $vars = array();
-	var $models = array('user', 'payment');
+	var $models = array('user');
 	
 	////////////////////////////////////
 	//    FONCTION DE CONSTRUCTION    //
@@ -49,9 +49,6 @@ class Layoutdefault extends Common{
 		
 		$freespace = disk_free_space(ROOT_DOWNLOADS);
 		$tab['freespace'] = $freespace;
-		
-		$payment = new Payment(Core::idCo());
-		$tab['active'] = $payment->getActive();
 		
 		$this->set($tab);
 	}

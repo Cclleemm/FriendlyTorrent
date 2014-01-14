@@ -11,7 +11,7 @@ class Rss extends Controller{
 	// CHARGEMENT DES MODELS UTILISES //
 	////////////////////////////////////
 
-        var $models = array('payment');
+        var $models = array();
         var $title = array('index' => 'Flux RSS');
 
 	////////////////////////////////////
@@ -22,9 +22,6 @@ class Rss extends Controller{
 		$d = array();
 		
 		$d['lien'] = $this->user->userData['rss'];
-		
-		$payment = new Payment(Core::idCo());
-		$d['active'] = $payment->getActive();
 		
         $this->set($d);
         $this->render('index');
