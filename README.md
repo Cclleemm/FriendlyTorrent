@@ -41,6 +41,7 @@ bootstrap/
 sudo chmod +x ./install.sh
 sudo ./install.sh 
 ``` 
+* Enable HTACESS for the web folder (vhost file).
 
 ## Manual installation
 
