@@ -105,7 +105,7 @@ mysql -u $userBDD -p$passBDD $bdd << EOF
 insert into users(login,mail,password,boxe,couleur,lastScan,rss,admin,port) values('$login','-','$md5','$dossierBoxes/$login', '78ba00', 0, '', 1, 9091);
 EOF
 
-kdir "$websiteFolder""core/config/"
+mkdir "$websiteFolder""core/config/"
 
 echo "<?php
 
