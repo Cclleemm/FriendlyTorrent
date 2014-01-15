@@ -1,0 +1,8 @@
+### PHPSTORM ###
+.idea
+
+### MAC ###
+.com.apple.timemachine.supported
+
+### CONFIG FOLDER ###
+/src/core/config/*
