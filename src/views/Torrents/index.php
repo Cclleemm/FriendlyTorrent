@@ -25,15 +25,8 @@
 <script>
 		adresseTorrent = 'action/listeTorrent/';
 	 	seedbox.interval = setInterval("refreshTorrent()", 3000);
-	 	<?php
-  			echo 'refreshTorrent();';
-  				
-  			if($active){
-  		?>
+	 	refreshTorrent();
 	 	setTimeout('loadUpload()', 500);
-	 	<?php
-	 		}
-	 	?>
 	 	
 </script>
 </div>
