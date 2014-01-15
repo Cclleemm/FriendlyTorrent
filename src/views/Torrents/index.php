@@ -1,9 +1,3 @@
-<?php
-	
-	if($active){
-?>
-
-
 <div id="panelRight" class="hidden-xs" style="display:block;overflow:scroll ">
 	
 </div>
@@ -31,22 +25,8 @@
 <script>
 		adresseTorrent = 'action/listeTorrent/';
 	 	seedbox.interval = setInterval("refreshTorrent()", 3000);
-	 	<?php
-  			echo 'refreshTorrent();';
-  				
-  			if($active){
-  		?>
+	 	refreshTorrent();
 	 	setTimeout('loadUpload()', 500);
-	 	<?php
-	 		}
-	 	?>
 	 	
 </script>
-<?php
-	}else{
-?>
-<div class="alert alert-danger">Aucun abonnement actif !</div>
-<?php
-	}
-?>
 </div>

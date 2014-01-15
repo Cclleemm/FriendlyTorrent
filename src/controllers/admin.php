@@ -130,18 +130,6 @@ class Admin extends Controller{
 		header('Location: '.DOMAIN.'admin/');
     }
     
-    function addDays($id){
-		$d = array();
-		
-		if(!Core::isAdmin())
-			header('Location: '.DOMAIN);
-			
-		$user = new User($id);
-		$user->addDays(30, 4.00);
-
-		header('Location: '.DOMAIN.'admin/?alert=days');
-    }
-    
     function stopTrans($id){
 		$d = array();
 		

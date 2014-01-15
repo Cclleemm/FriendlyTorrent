@@ -43,9 +43,6 @@ class Boxe extends Controller{
 		$d['pourcent'] = round((Tools::dirsize($boxe->boxeData['boxe']) / $totalspace)*100);
 		$d['space'] = Tools::dirsize($boxe->boxeData['boxe']);
 		
-		$payment = new Payment(Core::idCo());
-		$d['active'] = $payment->getActive();
-		
         $this->set($d);
         $this->render('index');
     }
@@ -78,9 +75,6 @@ class Boxe extends Controller{
 		
 		
 		$d['color'] = $d['boxe']['couleur'];
-		
-		$payment = new Payment(Core::idCo());
-		$d['active'] = $payment->getActive();
 		
         $this->set($d);
         $this->render('index');

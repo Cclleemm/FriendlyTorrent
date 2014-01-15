@@ -5,6 +5,8 @@ FriendlyTorrent is a web PHP script to download torrents with a beautiful an int
 Moreover it allow you to explore and share download files "in the cloud" with your friends.
 This software is based on [Transmission](http://www.transmissionbt.com) torrent software.
 
+This is a BETA version, maybe you can help us ? :) [TODO List](https://github.com/Cclleemm/FriendlyTorrent/wiki/TODO)
+
 ![PreviewImage](http://friendlytorrent.com/img/home.png) 
 
 ### What's included
@@ -39,6 +41,7 @@ bootstrap/
 sudo chmod +x ./install.sh
 sudo ./install.sh 
 ``` 
+* Enable HTACESS for the web folder (vhost file).
 
 ## Manual installation
 
@@ -104,7 +107,6 @@ Enable HTACESS for the web folder.
 Add thoose lines in the cron table `/etc/cron.d/php5`
 ```
 */1 * * * *     www-data wget "http://localhost/action/refreshTorrent/" -O /dev/null' >> /etc/cron.d/php5
-10 0 * * * 	    www-data wget "http://localhost/action/deleteOneDayForAllUser/?verif=PASSWORD" -O /dev/null
 ```
 
 

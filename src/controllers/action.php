@@ -12,7 +12,7 @@ class Action extends Controller{
 	// CHARGEMENT DES MODELS UTILISES //
 	////////////////////////////////////
 
-        var $models = array('cloud', 'torrents', 'torrent', 'rss', 'xfer', 'payment');
+        var $models = array('cloud', 'torrents', 'torrent', 'rss', 'xfer');
 
 	////////////////////////////////////
 	//          ACTION INDEX          //
@@ -68,13 +68,6 @@ class Action extends Controller{
     function disconnect(){
 	    $this->user->disconnect();
 	    header('Location : /');
-    }
-    
-    function deleteOneDayForAllUser(){
-	    if($_GET['verif'] == "superMDP"){
-	    	$sql45 = "UPDATE `users` SET `nbrJours`= nbrJours - 1 WHERE nbrJours > 0;";
-			mysql_query($sql45);
-	    }
     }
     
     function bulleSpace(){
@@ -157,11 +150,7 @@ class Action extends Controller{
     	$freespace = disk_free_space(ROOT_DOWNLOADS);
     	if(round(($freespace / 1024)/1024/1024, 2) < 50)
     		echo '<script>$.pnotify({title: \'Erreur\',text: \'Il reste plus assez d\'espace sur le serveur !\',type: \'error\'});</script>';
-    		
-    	$payment = new Payment(Core::idCo());
-		$active = $payment->getActive();
-    	
-    	if($active){
+
 	    	$sql = "SELECT * FROM cacheRss WHERE id = '".$id."';";
 		    $rst = $this->bdd->query($sql);
 		    $rslt = mysql_fetch_assoc($rst);
@@ -194,9 +183,6 @@ class Action extends Controller{
 				  	}
 			      	else
 			      		echo '<script>$.pnotify({title: \'Ajout\',text: \'Ajout impossible de ce torrent car vous le téléchargez déjà !\',type: \'error\'});</script>';
-		}else{
-			echo '<script>$.pnotify({title: \'Abonnement\',text: \'Ajout impossible car aucun abonnement est actif !\',type: \'error\'});</script>';
-		}
     }
 
     function sup($id){

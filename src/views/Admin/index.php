@@ -27,13 +27,6 @@
 	<strong>Utilisateur créé !</strong>
 </div>';
 			}
-			
-			if($_GET['alert'] == 'days'){
-				echo '<div class="alert alert-success">
-	<button type="button" class="close" data-dismiss="alert">×</button>
-	<strong> 30 jours ont été crédités !</strong>
-</div>';
-			}
 		?>
 	</div>
 	
@@ -43,7 +36,6 @@
                 <tr>
                   <th>Login</th>
                   <th>Mail</th>
-                  <th>Jours restant</th>
                   <th>Port Trans</th>
                   <th>Admin</th>
                   <th>Action</th>
@@ -74,15 +66,10 @@
 	              		echo '<tr>
 	              				<td><b>'.$value['login'].'</b></td>
 	              				<td>'.$value['mail'].'</td>
-	              				<td>'.$value['nbrJours'];
-	              					/*if($paiements)
-	              						echo '<button style="margin-left:10px;" type="button" class="btn btn-info glyphicon glyphicon-info-sign" data-toggle="popover" data-placement="left" data-content="'.$paiements.'" data-original-title="" title="" data-container="body" ><i></i></button>';*/
-	              				echo '</td>
 	              				<td>'.$value['port'].'</td>
 	              				<td>'.$admin.'</td>
 	              				<td class="center" style="width: 100px;">
 									<a href="'.DOMAIN.'admin/editUser/'.$value['id'].'/" data-toggle="tooltip" data-placement="top" data-original-title="Modifier un utilisateur" class="btn-action glyphicon glyphicon-pencil btn btn-success"><i></i></a>
-									<a href="'.DOMAIN.'admin/addDays/'.$value['id'].'/" data-toggle="tooltip" data-placement="top" data-original-title="Ajouter 30 jours" class="btn-action glyphicon glyphicon-plus-sign btn btn-success"><i></i></a>
 									'.$adminBtn;
 										if (!$rpc)
 											echo ' <a data-toggle="tooltip" data-placement="left" data-original-title="Lancer le processus transmission" href="'.DOMAIN.'admin/startTrans/'.$value['id'].'/" class="btn btn-action glyphicon glyphicon-play btn-success"><i></i></a>';

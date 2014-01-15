@@ -2,11 +2,6 @@
 	<p><?php echo $title ; ?></p>
 </header>
 
-<?php
-	
-	if($active){
-?>
-
 <div id="content" class="color-1" >
 		
 	<?php include(ROOT.'views/layout/header.php'); ?>
@@ -40,10 +35,3 @@
 				echo 'refreshRss();';
 		?>
 </script>
-<?php
-	}else{
-?>
-<div class="alert alert-danger">Aucun abonnement actif !</div>
-<?php
-	}
-?>

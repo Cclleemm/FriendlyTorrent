@@ -72,7 +72,6 @@ echo "------------ PHP/Apache2 Configuration ------------ "
 echo 'extension=memcache.so' >> /etc/php5/apache2/php.ini
 echo "PHP Memcache extension enabled"
 echo '*/1 * * * *     www-data wget "http://localhost/action/refreshTorrent/" -O /dev/null' >> /etc/cron.d/php5
-echo '10 0 * * * 	www-data wget "http://localhost/action/deleteOneDayForAllUser/?verif=PASSWORD" -O /dev/null' >> /etc/cron.d/php5
 
 if [ -f "$websiteFolder/index.html" ]; then
    sudo mv "$websiteFolder/index.html" "$websiteFolder/index-old.html"
@@ -124,7 +123,7 @@ define('TRANSMISSION','/usr/bin/transmission-daemon');
 ?>" > "$websiteFolder""core/config/global.php"
 
 sudo service apache2 reload
-sudo service transmission stop
+sudo service transmission-daemon stop
 sudo /etc/init.d/cron restart
 
 echo "----------------------------------------------------"

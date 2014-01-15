@@ -11,7 +11,7 @@ class Torrents extends Controller{
 	// CHARGEMENT DES MODELS UTILISES //
 	////////////////////////////////////
 
-        var $models = array('xfer', 'payment');
+        var $models = array('xfer');
         var $title = array('index' => 'Mes torrents');
 
 	////////////////////////////////////
@@ -20,9 +20,6 @@ class Torrents extends Controller{
 	
     function index(){
 		$d = array();
-		
-		$payment = new Payment(Core::idCo());
-		$d['active'] = $payment->getActive();
 
         $this->set($d);
         $this->render('index');
