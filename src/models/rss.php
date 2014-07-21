@@ -31,8 +31,15 @@ class Rss extends Common{
 		            $id = $rslt['id'];
 		            $nameFile = $rslt['nameFile'];
 	            }else{
-			    $e = explode("/", $this->get_final_url($item->link));
-		            $nameFile = $e[(count($e)-1)];
+
+	            	$h = get_headers($this->get_final_url($item->link));
+
+	            	foreach($h as $key => $value){
+	            		if(strpos($value,'filename') !== FALSE){
+				            $e = explode("\"", $value);
+		 -		            $nameFile = $e[1];
+	 					}
+ 					}
 		            
 		            if($nameFile){
 		           	 	$sqlI = "INSERT INTO cacheRss VALUE('', '".addslashes($item->link)."', '".addslashes($nameFile)."');";
@@ -81,15 +88,15 @@ class Rss extends Common{
 	 */
 	function get_redirect_url($url){
 	    $redirect_url = null; 
-
+	
 	    $url_parts = @parse_url($url);
 	    if (!$url_parts) return false;
 	    if (!isset($url_parts['host'])) return false; //can't process relative URLs
 	    if (!isset($url_parts['path'])) $url_parts['path'] = '/';
-
+	
 	    $sock = fsockopen($url_parts['host'], (isset($url_parts['port']) ? (int)$url_parts['port'] : 80), $errno, $errstr, 30);
 	    if (!$sock) return false;
-
+	
 	    $request = "HEAD " . $url_parts['path'] . (isset($url_parts['query']) ? '?'.$url_parts['query'] : '') . " HTTP/1.1\r\n"; 
 	    $request .= 'Host: ' . $url_parts['host'] . "\r\n"; 
 	    $request .= "Connection: Close\r\n\r\n"; 
@@ -97,19 +104,19 @@ class Rss extends Common{
 	    $response = '';
 	    while(!feof($sock)) $response .= fread($sock, 8192);
 	    fclose($sock);
-
+	
 	    if (preg_match('/^Location: (.+?)$/m', $response, $matches)){
 	        if ( substr($matches[1], 0, 1) == "/" )
 	            return $url_parts['scheme'] . "://" . $url_parts['host'] . trim($matches[1]);
 	        else
 	            return trim($matches[1]);
-
+	
 	    } else {
 	        return false;
 	    }
-
+	
 	}
-
+	
 	/**
 	 * get_all_redirects()
 	 * Follows and collects all redirects, in order, for the given URL. 
@@ -128,7 +135,7 @@ class Rss extends Common{
 	    }
 	    return $redirects;
 	}
-
+	
 	/**
 	 * get_final_url()
 	 * Gets the address that the URL ultimately leads to. 
