@@ -182,6 +182,16 @@ Read the [Official Website](http://cclleemm.github.io/FriendlyTorrent/) for more
 
 ***
 
+###Tips
+
+You can change the langage in file : /core/core.php
+
+`require(ROOT.'core/languages/en.php');`
+
+*fr.php
+*en.php
+
+
 ## Community
 
 Keep track of development and community news.
