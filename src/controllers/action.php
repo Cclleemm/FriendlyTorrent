@@ -131,7 +131,7 @@ class Action extends Controller{
     		
     	$torrent = new Torrent($id);
     	if(!$torrent->start())
-   			echo '<script>$.pnotify({title: \'Démarrage\',text: \'Le torrent ne peut être démarré !\',type: \'error\'});</script>';
+   			echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_CANT_START_TORRENT.'\',type: \'error\'});</script>';
     }
 
     function stop($id){
@@ -140,7 +140,7 @@ class Action extends Controller{
     		
     	$torrent = new Torrent($id);
     	if(!$torrent->stop())
-   			echo '<script>$.pnotify({title: \'Démarrage\',text: \'Le torrent ne peut être stoppé !\',type: \'error\'});</script>';
+   			echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_CANT_STOP_TORRENT.'\',type: \'error\'});</script>';
     }
     
     function startRss($id){
@@ -149,7 +149,7 @@ class Action extends Controller{
     		
     	$freespace = disk_free_space(ROOT_DOWNLOADS);
     	if(round(($freespace / 1024)/1024/1024, 2) < 50)
-    		echo '<script>$.pnotify({title: \'Erreur\',text: \'Il reste plus assez d\'espace sur le serveur !\',type: \'error\'});</script>';
+    		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_NO_MORE_SPACE.'\',type: \'error\'});</script>';
 
 	    	$sql = "SELECT * FROM cacheRss WHERE id = '".$id."';";
 		    $rst = $this->bdd->query($sql);
@@ -177,29 +177,29 @@ class Action extends Controller{
 	
 					if($rslt['id'] == NULL || $rslt['id'] != NULL && $rslt['idBoxe'] != Core::idCo()){
 				    	if(Torrent::creat($nameFile."-".md5($user->userData['id']), $nameFile))
-							echo '<script>$.pnotify({title: \'Ajout\',text: \'Ajout du torrent effectué !\',type: \'success\',nonblock: true});refreshRss()</script>';
+							echo '<script>$.pnotify({title: \''.LANG_ADDING.'\',text: \''.LANG_TORRENT_ADDED.'\',type: \'success\',nonblock: true});refreshRss()</script>';
 				  		else
-				  			echo '<script>$.pnotify({title: \'Ajout\',text: \'Ajout impossible de ce torrent !\',type: \'error\'});</script>';
+				  			echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_CANT_ADD_TORRENT.'\',type: \'error\'});</script>';
 				  	}
 			      	else
-			      		echo '<script>$.pnotify({title: \'Ajout\',text: \'Ajout impossible de ce torrent car vous le téléchargez déjà !\',type: \'error\'});</script>';
+			      		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_CANT_ADD_TORRENT_ALREADY.'\',type: \'error\'});</script>';
     }
 
     function sup($id){
     	$torrent = new Torrent($id);
     	if(!$torrent->delete())
-   			echo '<script>$.pnotify({title: \'Suppression\',text: \'Le torrent ne peut être supprimé !\',type: \'success\'});</script>';
+   			echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_CANT_DELETE_TORRENT.'\',type: \'success\'});</script>';
     }
 
     function addTorrent(){
     	if(!Core::idCo()){
-    		echo '<script>$.pnotify({title: \'Erreur\',text: \'Vous avez été déconnecté !\',type: \'error\'});</script>';
+    		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_ERROR_DISCONNECTED.'\',type: \'error\'});</script>';
     		exit();
     	}
     	
     	$freespace = disk_free_space(ROOT_DOWNLOADS);
     	if(round(($freespace / 1024)/1024/1024, 2) < 50)
-    		echo '<script>$.pnotify({title: \'Erreur\',text: \'Il reste plus assez d\'espace sur le serveur !\',type: \'error\'});</script>';
+    		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_NO_MORE_SPACE.'\',type: \'error\'});</script>';
     		
     	if (!empty($_FILES)) {
 			$tempFile = $_FILES['Filedata']['tmp_name'];
@@ -225,25 +225,25 @@ class Action extends Controller{
 				if($rslt['id'] == NULL || $rslt['id'] != NULL && $rslt['idBoxe'] != Core::idCo()){
 					move_uploaded_file($tempFile,ROOT_DOWNLOADS.".transferts/".$nameFile."-".md5($user->userData['id']));
 					if(Torrent::creat($nameFile."-".md5($user->userData['id']), $nameFile))
-						echo '<script>$.pnotify({title: \'Ajout\',text: \'Ajout du torrent effectué !\',type: \'success\', nonblock: true});</script>';
+						echo '<script>$.pnotify({title: \''.LANG_ADDING.'\',text: \''.LANG_TORRENT_ADDED.'\',type: \'success\', nonblock: true});</script>';
 		      		else{
 		      			$sf = new StatFile(ROOT_DOWNLOADS.".transferts/".$nameFile."-".md5($user->userData['id']), $user);
-		      			echo '<script>$.pnotify({title: \'Ajout\',text: \'Ajout impossible de ce torrent ! -- '.$sf->time_left.'\',type: \'error\'});</script>';
+		      			echo '<script>$.pnotify({title: \''.LANG_ADDING.'\',text: \''.LANG_CANT_ADD_TORRENT.' -- '.$sf->time_left.'\',type: \'error\'});</script>';
 		      		}
 		      	}
 		      	else
-		      		echo '<script>$.pnotify({title: \'Ajout\',text: \'Ajout impossible de ce torrent car vous le téléchargez déjà !\',type: \'error\'});</script>';
+		      		echo '<script>$.pnotify({title: \''.LANG_ADDING.'\',text: \''.LANG_CANT_ADD_TORRENT_ALREADY.'\',type: \'error\'});</script>';
 			} else {
-				echo '<script>$.pnotify({title: \'Ajout\',text: \'Veuillez choisir un fichier .torrent !\',type: \'error\'});</script>';
+				echo '<script>$.pnotify({title: \''.LANG_ADDING.'\',text: \''.LANG_CHOOSE_TORRENT.'\',type: \'error\'});</script>';
 		}
 		}else{
-			echo '<script>$.pnotify({title: \'Ajout\',text: \'Ajout impossible de ce torrent !\',type: \'error\'});</script>';
+			echo '<script>$.pnotify({title: \''.LANG_ADDING.'\',text: \''.LANG_CANT_ADD_TORRENT.'\',type: \'error\'});</script>';
 		}
     }
 
     function space(){
     	if(!Core::idCo())
-    		echo '<script>$.pnotify({title: \'Erreur\',text: \'Vous avez été déconnecté !\',type: \'error\'});</script>';
+    		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_ERROR_DISCONNECTED.'\',type: \'error\'});</script>';
     		
     	$espaces = array();
     	$colors = array();
@@ -263,7 +263,7 @@ class Action extends Controller{
 			$colors[] = '#'.$rslt['couleur'];
 		}
 		
-		$espaces[] = array("label" => 'Espace libre', "data" => $free);
+		$espaces[] = array("label" => LANG_FREE_SPACE, "data" => $free);
 		$colors[] = '#029ec6';
 		
     	echo json_encode(array('space' => $espaces, 'colors' => $colors));
@@ -271,7 +271,7 @@ class Action extends Controller{
     
     function useBand(){
     	if(!Core::idCo())
-    		echo '<script>$.pnotify({title: \'Erreur\',text: \'Vous avez été déconnecté !\',type: \'error\'});</script>';
+    		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_ERROR_DISCONNECTED.'\',type: \'error\'});</script>';
     		
     	$usersUp = array();
     	$usersDown = array();
@@ -339,7 +339,7 @@ class Action extends Controller{
     
     function nbNotif(){
     	if(!Core::idCo())
-    		echo '<script>$.pnotify({title: \'Erreur\',text: \'Vous avez été déconnecté !\',type: \'error\'});</script>';
+    		echo '<script>$.pnotify({title: \''.LANG_ERROR.'\',text: \''.LANG_ERROR_DISCONNECTED.'\',type: \'error\'});</script>';
     		
 		$sql = "SELECT COUNT(*) as nb FROM messagerie WHERE idUserTarget = '".Core::idCo()."' AND seen = 0;";
 		$rst = $this->bdd->query($sql);

@@ -12,7 +12,7 @@ class Connect extends Controller{
 	////////////////////////////////////
 
         var $models = array('user');
-        var $title = array('index' => 'Connexion');
+        var $title = array('index' => LANG_CONNECTION);
 
 	////////////////////////////////////
 	//          ACTION INDEX          //

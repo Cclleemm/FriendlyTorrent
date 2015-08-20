@@ -6,22 +6,22 @@
 <div class="panel wrapper">
 	<div class="row text-center">
 		<div class="col-md-2">
-			<p class="h3 font-bold m-t" style="margin-top:5px;" ><?php echo $totalOff; ?></p> <p style="margin-bottom:0px;" class="text-muted">Transferts</p>
+			<p class="h3 font-bold m-t" style="margin-top:5px;" ><?php echo $totalOff; ?></p> <p style="margin-bottom:0px;" class="text-muted"><?php echo LANG_NETWORK; ?></p>
 		</div>
 		<div class="col-md-2">
-			<p class="h3 font-bold m-t" style="margin-top:5px;"><?php echo $me; ?></p> <p style="margin-bottom:0px;" class="text-muted">Mes transferts</p>
+			<p class="h3 font-bold m-t" style="margin-top:5px;"><?php echo $me; ?></p> <p style="margin-bottom:0px;" class="text-muted"><?php echo LANG_MY_NETWORK; ?></p>
 		</div>
 		<div class="col-md-2">
-			<p class="h3 font-bold m-t" style="margin-top:5px;"><?php echo Tools::convertBoxe($uploadTotal); ?></p> <p style="margin-bottom:0px;" class="text-muted">Upload ce mois</p>
+			<p class="h3 font-bold m-t" style="margin-top:5px;"><?php echo Tools::convertBoxe($uploadTotal); ?></p> <p style="margin-bottom:0px;" class="text-muted">Upload <?php echo LANG_THIS_MONTH; ?></p>
 		</div>
 		<div class="col-md-2">
-			<p class="h3 font-bold m-t" style="margin-top:5px;"><?php echo Tools::convertBoxe($downloadTotal); ?></p> <p style="margin-bottom:0px;" class="text-muted">Download ce mois</p>
+			<p class="h3 font-bold m-t" style="margin-top:5px;"><?php echo Tools::convertBoxe($downloadTotal); ?></p> <p style="margin-bottom:0px;" class="text-muted">Download  <?php echo LANG_THIS_MONTH; ?></p>
 		</div>
 		<div class="col-md-2">
-			<p class="h3 font-bold m-t" style="margin-top:5px;" id="upInst" >-</p> <p style="margin-bottom:0px;" class="text-muted">Upload instantanné</p>
+			<p class="h3 font-bold m-t" style="margin-top:5px;" id="upInst" >-</p> <p style="margin-bottom:0px;" class="text-muted">Upload live</p>
 		</div>
 		<div class="col-md-2">
-			<p class="h3 font-bold m-t" style="margin-top:5px;" id="downInst" >-</p> <p style="margin-bottom:0px;" class="text-muted">Download instantanné</p>
+			<p class="h3 font-bold m-t" style="margin-top:5px;" id="downInst" >-</p> <p style="margin-bottom:0px;" class="text-muted">Download live</p>
 		</div>
 	</div>
 </div>

@@ -13,7 +13,7 @@ class Stats extends Controller{
 	////////////////////////////////////
 
         var $models = array('xfer');
-        var $title = array('index' => 'Statistiques du serveur');
+        var $title = array('index' => LANG_CHARTS);
 
 	////////////////////////////////////
 	//          ACTION INDEX          //

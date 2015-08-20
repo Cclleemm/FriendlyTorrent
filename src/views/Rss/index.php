@@ -10,9 +10,9 @@
 		<table class="table table-vertical-center table-primary table-thead-simple">
 			<thead>
                 <tr>
-                  <th>Nom</th>
+                  <th><?php echo LANG_NAME; ?></th>
                   <th>Statut</th>
-                  <th>Actions</th>
+                  <th><?php echo LANG_ACTION; ?></th>
                 </tr>
               </thead>
               <tbody id="listeTorrent" >
@@ -23,7 +23,7 @@
             if(!$_GET['ajax']){
         ?>
 		<div id="loaderTorrent">
-			<br /><center><h2>Chargement ...</h2></center><br />
+			<br /><center><h2><?php echo LANG_LOADING; ?> ...</h2></center><br />
 		</div>
 		<?php
 			}

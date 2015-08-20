@@ -6,14 +6,13 @@
 				<div class="form-signin">
 					<?php
 						if(!$error){
-					?>
-						Vous allez télécharger le 
-						<?php
+							echo LANG_YOU_WILL_DOWNLOAD; 
+							
 							if($file['type'] == "FOLDER"){
-								echo 'dossier';
+								echo LANG_FOLDER;
 								$size = 0;
 							}else{
-								echo 'fichier';
+								echo LANG_FILE;
 								$size = filesize($download['linkFile']);
 							}
 							
@@ -25,14 +24,14 @@
 						$name = $nameTmp[count($nameTmp)-1];
 						echo Tools::debutchaine($name, 40); 
 						?></h6></center>
-						<?php if($size){ ?>Taille : <br /><br /><center><h4 style="color:black;" ><?php 
+						<?php if($size){ ?><?php echo LANG_SIZE; ?> : <br /><br /><center><h4 style="color:black;" ><?php 
 							echo Tools::convertFileSize($size);
 						?></h4></center><br /><br /><?php } ?>
 						
-						<a href="<?php echo DOMAIN.'downloads/start/'.$download['clef'].'/'.$name; ?>"><span style="width:247px;" class="btn btn-large color-4">Démarrer le téléchargement</span></a>
+						<a href="<?php echo DOMAIN.'downloads/start/'.$download['clef'].'/'.$name; ?>"><span style="width:247px;" class="btn btn-large color-4"><?php echo LANG_START_DOWNLOAD; ?></span></a>
 					<?php
 						}else{
-							echo '<br /><center><h4 style="color:red;" >Erreur : téléchargement inéxistant !</h4></center>';
+							echo '<br /><center><h4 style="color:red;" >'.LANG_ERROR_INEXISTING.'</h4></center>';
 						}
 					?>
 				</div>

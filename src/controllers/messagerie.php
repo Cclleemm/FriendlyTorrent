@@ -12,7 +12,7 @@ class messagerie extends Controller{
 	////////////////////////////////////
 
         var $models = array('user');
-        var $title = array('index' => 'Messagerie');
+        var $title = array('index' => LANG_INBOX);
 
 	////////////////////////////////////
 	//          ACTION INDEX          //
@@ -71,7 +71,7 @@ class messagerie extends Controller{
 		
 		$d['idUser'] = $user->userData['id'];
 		
-		$this->title['chat'] = "Conversation avec ".$user->userData['login'];
+		$this->title['chat'] = LANG_CONVERSATION_WITH." ".$user->userData['login'];
 		$this->setTitle();
 		
         $this->set($d);

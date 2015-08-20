@@ -12,7 +12,7 @@ class Rss extends Controller{
 	////////////////////////////////////
 
         var $models = array();
-        var $title = array('index' => 'Flux RSS');
+        var $title = array('index' => LANG_RSS);
 
 	////////////////////////////////////
 	//          ACTION INDEX          //

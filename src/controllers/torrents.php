@@ -12,7 +12,7 @@ class Torrents extends Controller{
 	////////////////////////////////////
 
         var $models = array('xfer');
-        var $title = array('index' => 'Mes torrents');
+        var $title = array('index' => LANG_TITLE_MY_TORRENTS);
 
 	////////////////////////////////////
 	//          ACTION INDEX          //

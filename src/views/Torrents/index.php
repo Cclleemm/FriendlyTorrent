@@ -18,7 +18,7 @@
 		</div>
 
 		<div id="loaderTorrent">
-			<br /><center><h2>Chargement ...</h2></center><br />
+			<br /><center><h2> <?php echo LANG_LOADING; ?> ...</h2></center><br />
 		</div>
 
 

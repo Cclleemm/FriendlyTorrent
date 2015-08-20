@@ -44,10 +44,10 @@
 <form class="form-signin" method="post" action="">
 	<div class="container">
       <form class="form-signin">
-        <h2 class="form-signin-heading">Connectez-vous</h2>
-        <input type="text" name="login" class="form-control" placeholder="Login" autofocus>
-        <input type="password" name="mdp" class="form-control" placeholder="Mot de passe">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Connexion</button>
+        <h2 class="form-signin-heading"><?php echo LANG_LOG_IN; ?></h2>
+        <input type="text" name="login" class="form-control" placeholder="<?php echo LANG_LOGIN; ?>" autofocus>
+        <input type="password" name="mdp" class="form-control" placeholder="<?php echo LANG_PASSWORD; ?>">
+        <button class="btn btn-lg btn-primary btn-block" type="submit"><?php echo LANG_CONNECTION; ?></button>
       </form>
 
     </div> <!-- /container -->

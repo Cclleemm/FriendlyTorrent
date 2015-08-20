@@ -29,7 +29,7 @@ $_GET['dir'] = str_replace('../', '', $_GET['dir']);
 	    <h4><?php echo ucfirst($boxe['login']);?></h4>
 	    <br /><br />
 	    <div class="panel wrapper"> <div class="row">  <div class="col-xs-6"> <a href="#"> <span class="m-b-xs h4 block"><?php echo Tools::convertBoxe($uploadTotal); ?></span> <br /><small class="text-muted">Upload</small> </a> </div> <div class="col-xs-6"> <a href="#"> <span class="m-b-xs h4 block"><?php echo Tools::convertBoxe($downloadTotal); ?></span><br /> <small class="text-muted">Download</small> </a> </div> </div> </div>
-	    <div class="panel wrapper"> <div class="row">  <div class="col-xs-6"> <a href="#"> <span class="m-b-xs h4 block"><?php echo Tools::convertBoxe($space); ?></span> <br /><small class="text-muted">utilisé sur le serveur</small> </a> </div> <div class="col-xs-6"> <a href="#"> <span class="m-b-xs h4 block"><?php if($pourcent > 7){ echo '<string style="color:#b94a48;font-weight:bold;" data-toggle="tooltip" data-placement="top" data-original-title="Attention, vous utilisez beaucoup d\'espace !" >'; }echo $pourcent.'%'; if($pourcent > 10){ echo '</string>'; } ?></span><br /> <small class="text-muted">du serveur</small> </a> </div> </div> </div>
+	    <div class="panel wrapper"> <div class="row">  <div class="col-xs-6"> <a href="#"> <span class="m-b-xs h4 block"><?php echo Tools::convertBoxe($space); ?></span> <br /><small class="text-muted"><?php echo LANG_USE_ON_SERVER; ?></small> </a> </div> <div class="col-xs-6"> <a href="#"> <span class="m-b-xs h4 block"><?php if($pourcent > 7){ echo '<string style="color:#b94a48;font-weight:bold;" data-toggle="tooltip" data-placement="top" data-original-title="'.LANG_TO_MUCH_SPACE.'" >'; }echo $pourcent.'%'; if($pourcent > 10){ echo '</string>'; } ?></span><br /> <small class="text-muted"><?php echo LANG_OF_SERVER; ?></small> </a> </div> </div> </div>
 	    
 	    <?php
 	    	if($boxe['id'] != Core::idCo()){
@@ -43,10 +43,10 @@ $_GET['dir'] = str_replace('../', '', $_GET['dir']);
 		<table id="boxe" class="table table-vertical-center table-primary table-thead-simple table-responsive block">
 			<thead>
                 <tr>
-                  <th axis="string" width="70%" >Nom</th>
-                  <th width="10%" >Info</th>
-                  <th width="10%" >Type</th>
-                  <th width="10%" >Taille</th>
+                  <th axis="string" width="70%" ><?php echo LANG_NAME; ?></th>
+                  <th width="10%" ><?php echo LANG_INFO; ?></th>
+                  <th width="10%" ><?php echo LANG_TYPE; ?></th>
+                  <th width="10%" ><?php echo LANG_SIZE; ?></th>
                   <th></th>
                 </tr>
               </thead>
@@ -102,13 +102,13 @@ $_GET['dir'] = str_replace('../', '', $_GET['dir']);
                            if($rslt['time'] > $user->timeLastCloud($boxe['id']))
                                   $html .= ' class="success" ';
                            $html .= ' >
-                                <td data-title="Nom" >';
+                                <td data-title="'.LANG_NAME.'" >';
                                     
                                     $html .= '<i class="icon-folder-open"></i> '.$entry.'';
-                                    $html .= '</td><td data-title="Info" > <span class="label label-info" data-toggle="tooltip" data-placement="top" data-original-title="Ce dossier est en téléchargement">EN DL</label>';
+                                    $html .= '</td><td data-title="'.LANG_INFO.'" > <span class="label label-info" data-toggle="tooltip" data-placement="top" data-original-title="'.LANG_DOWNLOADING_DESC.'">'.LANG_DOWNLOADING.'</label>';
                                 $html .= '</td>
-                                <td data-title="Type" >Dossier</td>
-                                <td data-title="Taille" >'.Tools::convertFileSize($stat->size).'</td>
+                                <td data-title="'.LANG_TYPE.'" >'.LANG_FOLDER.'</td>
+                                <td data-title="'.LANG_SIZE.'" >'.Tools::convertFileSize($stat->size).'</td>
                                 <td></td>
                               </tr>';
                         }else{
@@ -122,15 +122,15 @@ $_GET['dir'] = str_replace('../', '', $_GET['dir']);
                            else
                            		$html .= ' class="selectable" ';
                            $html .= ' >
-                                <td data-title="Nom" >';
+                                <td data-title="'.LANG_NAME.'" >';
                                     /*if($dir == $boxe['boxe']."/")
                                     	$html .= "<div class='categorie ".$cat."' ></div>";*/
-                                $html .= '<a href="'.$dossier.'/" style="color:#000000;" ><i class="icon-folder-open"></i> <string>'.$entry.'</string></a></td><td data-title="Info" >';
+                                $html .= '<a href="'.$dossier.'/" style="color:#000000;" ><i class="icon-folder-open"></i> <string>'.$entry.'</string></a></td><td data-title="'.LANG_INFO.'" >';
                                   if(!$download->ifDownloaded())
-                                    $html .= ' <div class="label label-warning" data-toggle="tooltip" data-placement="top" data-original-title="Vous n\'avez jamais dl ce dossier" >NO DL</div>';
+                                    $html .= ' <div class="label label-warning" data-toggle="tooltip" data-placement="top" data-original-title="'.LANG_NO_DOWNLOAD_DESC.'" >'.LANG_NO_DOWNLOADING.'</div>';
                                 $html .= '</td>
-                                <td data-title="Type" >Dossier</td>
-                                <td data-title="Taille" >'.Tools::convertFileSize(Tools::dirsize($dir."/".$entry)).'</td>
+                                <td data-title="'.LANG_TYPE.'" >Dossier</td>
+                                <td data-title="'.LANG_SIZE.'" >'.Tools::convertFileSize(Tools::dirsize($dir."/".$entry)).'</td>
                                 <td><icon class="glyphicon glyphicon-chevron-down" ></icon></td></tr>';
                         }
 
@@ -142,12 +142,12 @@ $_GET['dir'] = str_replace('../', '', $_GET['dir']);
                           $html .= '<tr type="FICHIER" id="'.$rslt['id'].'" style="opacity:0.8;" ';
                            if($rslt['time'] > $user->timeLastCloud($boxe['id']))
                                   $html .= ' class="success" ';
-                           $html .= ' > <td data-title="Nom" >';
+                           $html .= ' > <td data-title="'.LANG_NAME.'" >';
                             $html .= '<i class="icon-file"></i> <string>'.$entry.'</string>';
-                                    $html .= ' </td><td data-title="Info" ><span class="label label-info" data-toggle="tooltip" data-placement="top" data-original-title="Ce fichier est en téléchargement" >EN DL</label>';
+                                    $html .= ' </td><td data-title="'.LANG_INFO.'" ><span class="label label-info" data-toggle="tooltip" data-placement="top" data-original-title="'.LANG_DOWNLOADING_DESC.'" >'.LANG_DOWNLOADING.'</label>';
                                 $html .= '</td>
-                                <td data-title="Type" >Fichier <span class="label label-important">'.$ext[count($ext)-1].'</label></td>
-                                <td data-title="Taille" >'.Tools::convertFileSize($stat->size).'</td>
+                                <td data-title="'.LANG_TYPE.'" >'.LANG_FILE.' <span class="label label-important">'.$ext[count($ext)-1].'</label></td>
+                                <td data-title="'.LANG_SIZE.'" >'.Tools::convertFileSize($stat->size).'</td>
                                 <td></td>
                           </tr>';
                         }else{
@@ -160,15 +160,15 @@ $_GET['dir'] = str_replace('../', '', $_GET['dir']);
                                   $html .= ' class="success selectable" ';
                            else
                            		$html .= ' class="selectable" ';
-                           $html .= ' > <td data-title="Nom" >';
+                           $html .= ' > <td data-title="'.LANG_NAME.'" >';
                                   /*if($dir == $boxe['boxe']."/")
                                     	$html .= "<div class='categorie ".$cat."' ></div>";*/
-                            $html .= '<i class="icon-file"></i> <string>'.$entry.'</string></td><td data-title="Info" >';
+                            $html .= '<i class="icon-file"></i> <string>'.$entry.'</string></td><td data-title="'.LANG_INFO.'" >';
                                 	if(!$download->ifDownloaded())
-                                		$html .= ' <div class="label label-warning" data-toggle="tooltip" data-placement="top" data-original-title="Vous n\'avez jamais dl ce fichier" >NO DL</div>';
+                                		$html .= ' <div class="label label-warning" data-toggle="tooltip" data-placement="top" data-original-title="'.LANG_NO_DOWNLOAD_DESC.'" >'.LANG_NO_DOWNLOAD.'</div>';
                                 $html .= '</td>
-                                <td data-title="Type" >Fichier <span class="label label-info">'.$ext[count($ext)-1].'</label></td>
-                                <td data-title="Taille" >'.Tools::convertFileSize(filesize($dir."/".$entry)).'</td>
+                                <td data-title="'.LANG_TYPE.'" >'.LANG_FILE.' <span class="label label-info">'.$ext[count($ext)-1].'</label></td>
+                                <td data-title="'.LANG_SIZE.'" >'.Tools::convertFileSize(filesize($dir."/".$entry)).'</td>
                                 <td><icon class="glyphicon glyphicon-chevron-down" ></icon></td></tr>';
                         }
                       }

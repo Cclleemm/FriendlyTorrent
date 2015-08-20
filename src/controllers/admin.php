@@ -12,7 +12,7 @@ class Admin extends Controller{
 	////////////////////////////////////
 
         var $models = array('user');
-        var $title = array('index' => 'Administration');
+        var $title = array('index' => LANG_TITLE_ADMINISTRATION);
 
 	////////////////////////////////////
 	//          ACTION INDEX          //
@@ -63,7 +63,7 @@ class Admin extends Controller{
 			if($this->post['newPass'] == $this->post['newPass2']){
 				$user->changeMdp($this->post['newPass']);
 			}else{
-				$d['error'] = "Les nouveaux mot de passe le correspondent pas !";
+				$d['error'] = LANG_PASSWORD_DIFERENT;
 			}
 		}
 		
@@ -95,13 +95,13 @@ class Admin extends Controller{
 						$sql = "INSERT INTO users VALUES ('', '".$this->post['login']."', '".$this->post['mail']."', '".md5($this->post['password'])."', '".ROOT_DOWNLOADS.$this->post['login']."/', '54709f', '', '', '0', '".($donnees['port']+1)."', '0', '1', '1');";
 						$this->bdd->query($sql);
 					}else{
-					$d['error'] = "Problème de création du dossier de la boxe !";
+					$d['error'] = LANG_CANT_CREATE_FOLDER;
 					}
 				}else{
-					$d['error'] = "Les mots de passes ne correspondent pas !";
+					$d['error'] = LANG_PASSWORD_DIFERENT;
 				}
 			}else{
-				$d['error'] = "Veuillez remplir tout les champs !";
+				$d['error'] = LANG_FILL_ALL_FIELDS;
 			}
 		
 			if(!$d['error'])

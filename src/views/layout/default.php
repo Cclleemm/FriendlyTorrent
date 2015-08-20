@@ -89,31 +89,31 @@
 					<a href="<?php echo DOMAIN; ?>torrents/">
 						<li>
 							<span class="glyphicon glyphicon-cloud-download"></span>
-							Downloads
+							<?php echo LANG_DOWNLOADS; ?>
 						</li>
 					</a>
 					<a href="<?php echo DOMAIN; ?>rss/">
 						<li>
 							<span class="glyphicon glyphicon-bookmark"></span>
-							Flux Rss
+							<?php echo LANG_RSS; ?>
 						</li>
 					</a>
 					<a href="<?php echo DOMAIN; ?>messagerie/">
 					<li>
 						<span class="glyphicon glyphicon-inbox"></span>
-						Messagerie
+						<?php echo LANG_INBOX; ?>
 						<div aff="0" style="position:relative;float:right;margin-top:-50px;display:none;" id="nbMess" class="badge">0</div>
 					</li>
 					</a>
 
 					<li onclick="$('#boxesMenu').toggle();" id="otherBoxes" >
 						<span class="glyphicon glyphicon-user"></span>
-						Boxes
+						<?php echo LANG_BOXES; ?>
 					</li>
 					<a href="<?php echo DOMAIN; ?>stats/">
 					<li>
 						<span class="glyphicon glyphicon-stats"></span>
-						Statistiques
+						<?php echo LANG_CHARTS; ?>
 					</li>
 					</a>
 					<?php 
@@ -122,7 +122,7 @@
 								<a href="<?php echo DOMAIN; ?>admin/">
 								<li>
 									<span class="glyphicon glyphicon-cog"></span>
-									Admin
+									<?php echo LANG_ADMIN; ?>
 								</li>
 								</a>
 							<?php
@@ -162,8 +162,8 @@
         <div class="modal-body">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-          <button type="button" class="btn btn-primary" id="OK" >Effectuer</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo LANG_CLOSE; ?></button>
+          <button type="button" class="btn btn-primary" id="OK" ><?php echo LANG_DONE; ?></button>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -175,13 +175,13 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title">Liens</h4>
+          <h4 class="modal-title"><?php echo LANG_LINKS; ?></h4>
         </div>
         <div class="modal-body">
         	<textarea class="contenu" style="width:100%;height:100px;" ></textarea>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo LANG_CLOSE; ?></button>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

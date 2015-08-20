@@ -1,11 +1,11 @@
 <header class="top" >
-	<a class="ajax" href="<?php echo DOMAIN; ?>messagerie/"><button style="margin-top:-5px;" class="btn btn-success pull-right"><i></i>Messagerie</button></a>
+	<a class="ajax" href="<?php echo DOMAIN; ?>messagerie/"><button style="margin-top:-5px;" class="btn btn-success pull-right"><i></i><?php echo LANG_INBOX; ?></button></a>
 	<div style="margin-top:-5px;margin-right:5px;" class="btn-group pull-right"> 
 			<button class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button> 
 			<ul class="dropdown-menu pull-right"> 
-				<li><a href="<?php echo DOMAIN; ?>messagerie/nouveau/<?php echo $message['id']; ?>/"><i class="glyphicon glyphicon-share-alt"></i> Reply</a></li> 
+				<li><a href="<?php echo DOMAIN; ?>messagerie/nouveau/<?php echo $message['id']; ?>/"><i class="glyphicon glyphicon-share-alt"></i> <?php echo LANG_REPLY; ?></a></li> 
 				<li class="divider"></li> 
-				<li><a href="<?php echo DOMAIN; ?>messagerie/delete/<?php echo $message['id']; ?>/">Supprimer ce message</a></li> 
+				<li><a href="<?php echo DOMAIN; ?>messagerie/delete/<?php echo $message['id']; ?>/"><?php echo LANG_DELETE_MESSAGE; ?></a></li> 
 			</ul>
 		</div>
 	<p><?php echo $message['object']; ?></p>

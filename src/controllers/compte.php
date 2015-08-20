@@ -12,7 +12,7 @@ class Compte extends Controller{
 	////////////////////////////////////
 
         var $models = array();
-        var $title = array('index' => 'Mon compte');
+        var $title = array('index' => LANG_TITLE_MY_ACCOUNT);
 
 	////////////////////////////////////
 	//          ACTION INDEX          //
@@ -27,12 +27,12 @@ class Compte extends Controller{
 			if(md5($this->post['oldPass']) == $d['user']['password']){
 				if($this->post['newPass'] == $this->post['newPass2']){
 					$this->user->changeMdp($this->post['newPass']);
-					$d['java'] = '<script>$.notification({ content: "Le mot de passe a bien été changé !", title: "Mot de passe changé !", icon: "&#9749;" });</script>';
+					$d['java'] = '<script>$.notification({ content: "'.LANG_PASSWORD_CHANGED.'", title: "'.LANG_PASSWORD_CHANGED.'", icon: "&#9749;" });</script>';
 				}else{
-					$d['error'] = "Les nouveaux mot de passe le correspondent pas !";
+					$d['error'] = LANG_PASSWORD_DIFERENT;
 				}
 			}else{
-				$d['error'] = "L'ancien mot de passe ne correspond pas !";
+				$d['error'] = LANG_OLD_PASSWORD_DIFERENT;
 			}
 		}
 		
