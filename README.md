@@ -1,4 +1,4 @@
-![PreviewImage](https://github.com/Cclleemm/FriendlyTorrent/github-page/img/logo-mini.png)  FriendlyTorrent
+![PreviewImage](http://cclleemm.github.io/FriendlyTorrent/github-page/img/logo-mini.png)  FriendlyTorrent
 =======
 
 FriendlyTorrent is a web PHP script to download torrents with a beautiful an intuitive web responsive interface.
@@ -7,7 +7,7 @@ This software is based on [Transmission](http://www.transmissionbt.com) torrent 
 
 This is a BETA version, maybe you can help us ? :) [TODO List](https://github.com/Cclleemm/FriendlyTorrent/wiki/TODO)
 
-![PreviewImage](https://github.com/Cclleemm/FriendlyTorrent/github-page/img/home.png) 
+![PreviewImage](http://cclleemm.github.io/FriendlyTorrent/github-page/img/home.png) 
 
 ### What's included
 
@@ -121,7 +121,7 @@ Stop transmission `sudo service transmission stop`
 
 ***
 
-Read the [Official Website](https://github.com/Cclleemm/FriendlyTorrent) for more information.
+Read the [Official Website](http://cclleemm.github.io/FriendlyTorrent) for more information.
 
 ***
 
@@ -130,7 +130,7 @@ Read the [Official Website](https://github.com/Cclleemm/FriendlyTorrent) for mor
 Keep track of development and community news.
 
 * Follow [@FriendlyTorrent on Twitter](http://twitter.com/friendlytorrent).
-* Read and subscribe to [The Official Website](https://github.com/Cclleemm/FriendlyTorrent).
+* Read and subscribe to [The Official Website](http://cclleemm.github.io/FriendlyTorrent).
 
 
 
