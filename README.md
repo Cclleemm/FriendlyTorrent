@@ -66,6 +66,11 @@ To
         Require all granted
 </Directory>
 ```
+Then, restart the apache service 
+
+```
+sudo service apache2 restart
+```
 
 Go to : http://localhost/
 
