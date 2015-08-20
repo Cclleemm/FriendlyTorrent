@@ -43,6 +43,32 @@ sudo ./install.sh
 ``` 
 * Enable HTACESS for the web folder (vhost file).
 
+Solution to enable HTACCESS but it's not secure :
+
+```
+sudo nano /etc/apache2/apache2.conf
+```
+Change Directory directive
+```
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+</Directory>
+```
+
+To
+
+```
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+```
+
+Go to : http://localhost/
+
 ## Manual installation
 
 ### Dependencies
@@ -104,6 +130,32 @@ Enable memcache in your `php.ini` file (/etc/php5/apache2/php.ini) adding line `
 
 Enable HTACESS for the web folder.
 
+Solution to enable HTACCESS but it's not secure :
+
+```
+sudo nano /etc/apache2/apache2.conf
+```
+Change Directory directive
+```
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+</Directory>
+```
+
+To
+
+```
+<Directory /var/www/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+```
+
+
+
 Add thoose lines in the cron table `/etc/cron.d/php5`
 ```
 */1 * * * *     www-data wget "http://localhost/action/refreshTorrent/" -O /dev/null' >> /etc/cron.d/php5
@@ -117,7 +169,7 @@ Restart Apache `sudo service apache2 reload`
 
 Stop transmission `sudo service transmission stop`
 
-
+Go to : http://localhost/
 
 ***
 
