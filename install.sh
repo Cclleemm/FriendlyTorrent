@@ -128,4 +128,6 @@ sudo /etc/init.d/cron restart
 
 echo "----------------------------------------------------"
 echo "----- Thank you for installing Friendly Torrent ----"
+echo "---------- Don't forget to enable HTACCESS ---------"
+echo "----------- And go to : http://localhost -----------"
 echo "----------------------------------------------------"
