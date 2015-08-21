@@ -7,11 +7,16 @@ checkInstall()
 	PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $1|grep "install ok installed")
 	echo Checking for $1: $PKG_OK
 	if [ "" == "$PKG_OK" ]; then
-	  echo "No $1. Setting up $1."
-	  sudo apt-get --force-yes --yes install $1
+		echo "No $1. Setting up $1."
+		if [ $1 == "sudo" ]; then
+			apt-get --force-yes --yes install $1
+		else
+			sudo apt-get --force-yes --yes install $1
+		fi
 	fi
 }
 
+checkInstall sudo
 checkInstall apache2
 a2enmod rewrite
 checkInstall php5
