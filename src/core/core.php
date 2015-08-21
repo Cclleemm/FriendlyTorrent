@@ -25,7 +25,7 @@ class Core {
         require(ROOT.'core/bdd.php');
 		
 		//Language switcher
-		if(LANGUAGE=="fr"){
+		if(LANGUAGE=="fr")
 			require(ROOT.'core/languages/fr.php');
 		else
 			require(ROOT.'core/languages/en.php');
