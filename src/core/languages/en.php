@@ -18,6 +18,8 @@ define("LANG_YES", "Yes");
 define("LANG_NO", "No");
 define("LANG_SAVE", "Save");
 define("LANG_LOADING", "Loading");
+define("LANG_ADDING", "Add");
+define("LANG_FILL_ALL_FIELDS", "Please fill all fields !");
 
 //Admin
 define("LANG_CREATE_ACCOUNT", "Create a user account");
@@ -83,6 +85,9 @@ define("LANG_CONVERSATION_WITH", "Chat with ");
 define("LANG_NETWORK", "Network");
 define("LANG_MY_NETWORK", "My Network transferts");
 define("LANG_THIS_MONTH", "this month");
+define("LANG_MONTH_UPLOAD_USE", "Data uploaded this month");
+define("LANG_MONTH_DOWNLOAD_USE", "Data downloaded this month");
+define("LANG_DISK_SPACE", "Disk space");
 
 //Controllers actions
 define("LANG_NO_MORE_SPACE", "No more free space on the server");

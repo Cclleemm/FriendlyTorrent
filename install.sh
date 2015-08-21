@@ -32,6 +32,12 @@ echo "Welcome in the Friendly Torrent installation wizard"
 echo "----------------------------------------------------"
 
 #Ask for Website dir
+echo -n "Application language (fr or en) [default : en] "
+read language
+if [[ $language == "" ]]
+	then
+		language=en
+fi
 echo -n "Website directory [default : /var/www/] "
 read websiteFolder
 if [[ $websiteFolder == "" ]]
@@ -120,6 +126,7 @@ echo "<?php
 echo "<?php
 define('ROOT_DOWNLOADS','$dossierBoxes');
 define('TRANSMISSION','/usr/bin/transmission-daemon');
+define('LANGUAGE','$language');
 ?>" > "$websiteFolder""core/config/global.php"
 
 sudo service apache2 reload

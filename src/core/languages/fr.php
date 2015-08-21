@@ -78,7 +78,6 @@ define("LANG_ERROR_INEXISTING", "Erreur : téléchargement inéxistant !");
 define("LANG_REPLY", "Répondre");
 define("LANG_DELETE_MESSAGE", "Supprimer ce message");
 define("LANG_MESSAGE_SENDED", "Envoi du message réussi !");
-define("LANG_DELETE_MESSAGE", "Supprimer ce message");
 define("LANG_CONVERSATION_WITH", "Conversation avec");
 
 
@@ -86,7 +85,9 @@ define("LANG_CONVERSATION_WITH", "Conversation avec");
 define("LANG_NETWORK", "Transferts");
 define("LANG_MY_NETWORK", "Mes transferts");
 define("LANG_THIS_MONTH", "ce mois");
-
+define("LANG_MONTH_UPLOAD_USE", "Utilisation de l'upload ce mois");
+define("LANG_MONTH_DOWNLOAD_USE", "Utilisation du download ce mois");
+define("LANG_DISK_SPACE", "Espace disque");
 
 //Controllers actions
 define("LANG_NO_MORE_SPACE", "Il reste plus assez d'espace sur le serveur !");

@@ -23,7 +23,12 @@ class Core {
     private function __construct($token) {
         
         require(ROOT.'core/bdd.php');
-        require(ROOT.'core/languages/en.php');
+		
+		//Language switcher
+		if(LANGUAGE=="fr"){
+			require(ROOT.'core/languages/fr.php');
+		else
+			require(ROOT.'core/languages/en.php');
         
         //INITIALISATION de la base de donnée
         $this->bdd=new BDD;

@@ -31,7 +31,7 @@
 	<div class="col-md-12">
 		<div class="widget">
 			<div class="widget-head">
-				Utilisation de l'upload ce mois
+				<?php echo LANG_MONTH_UPLOAD_USE; ?>
 			</div>
 			<div class="widget-body">
 				<div id="chart_ordered_bars" style="height: 280px;"></div>
@@ -41,7 +41,7 @@
 	<div class="col-md-12">
 		<div class="widget">
 			<div class="widget-head">
-				Utilisation du download ce mois
+				<?php echo LANG_MONTH_DOWNLOAD_USE; ?>
 			</div>
 			<div class="widget-body">
 				<div id="chart_ordered_barsDown" style="height: 280px;"></div>
@@ -59,7 +59,7 @@
 		
 		<div class="widget">
 			<div class="widget-head">
-				Espace Disque
+				<?php echo LANG_DISK_SPACE; ?>
 			</div>
 			<div class="widget-body">
 				<div class="progress">

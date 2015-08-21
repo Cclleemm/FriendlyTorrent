@@ -107,6 +107,7 @@ Cofigure the `src/core/config/global.php` file with yours settings :
 <?php
 define('ROOT_DOWNLOADS','/var/downloads/');
 define('TRANSMISSION','/usr/bin/transmission-daemon');
+define('LANGUAGE','en');
 ?>
 ```
 
@@ -181,15 +182,6 @@ Go to : http://localhost/
 Read the [Official Website](http://cclleemm.github.io/FriendlyTorrent/) for more information.
 
 ***
-
-###Tips
-
-You can change the language in file : /core/core.php
-
-`require(ROOT.'core/languages/en.php');`
-
-* fr.php
-* en.php
 
 
 ## Community
